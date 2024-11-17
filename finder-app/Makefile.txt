@@ -1,0 +1,11 @@
+export CROSS_COMPILE_PATH = /opt/arm-gnu-toolchain-13.3.rel1-x86_64-aarch64-none-linux-gnu
+KERNEL_DIR ?= $(TOOLCHAINPATH)/
+CROSS_COMPILE = aarch64-none-linux-gnu--  
+  
+writer : writer.c
+make
+make DESTDIR=$(CROSS_COMPILE_PATH -print-sysroot) install
+$(cc-$(ARCH)) $(INCLUDES) -c writer.c
+cc -c writer.c
+clean: 
+rm writer.o
