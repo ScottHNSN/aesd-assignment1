@@ -1,5 +1,5 @@
 #include "systemcalls.h"
-
+#include <stdlib.h>
 /**
  * @param cmd the command to execute with system()
  * @return true if the command in @param cmd was executed
@@ -9,6 +9,12 @@
 */
 bool do_system(const char *cmd)
 {
+int sstat;
+  sstat = system(cmd);
+  return sstat;
+
+
+
 
 /*
  * TODO  add your code here
